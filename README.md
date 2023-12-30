@@ -3,7 +3,16 @@
 - Create react app
 - Configure tailwind css
 - Header
+- Routing set up
 - Login form
+- Sign in sign up form
+- Form validation
+- useRef hooks
+- Firebase setup
+- Deploy our app to production
+- Create signUp user account
+- Implement Sign In user Api
+- Created redux store with userSlice
 
 # Features
 
