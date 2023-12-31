@@ -8,7 +8,6 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -19,7 +18,7 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
+
   const handleValidation = () => {
     const massage = checkValidation(
       email.current.value,
@@ -39,7 +38,7 @@ const Login = () => {
           // console.log(user);
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/113906566?v=4",
+            photoURL: "https://source.unsplash.com/random/200x200?sig=1",
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -51,7 +50,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrMassage(error.massage);
@@ -71,8 +69,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          // console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
