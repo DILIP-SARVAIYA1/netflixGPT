@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
-import { APP_BACKGROUND } from "../utils/constants";
+import { APP_BACKGROUND, PROFILE_URL } from "../utils/constants";
 import { checkValidation } from "../utils/validation";
 import { auth } from "../utils/firebase";
 import {
@@ -35,10 +35,9 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          // console.log(user);
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://source.unsplash.com/random/200x200?sig=1",
+            photoURL: PROFILE_URL,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -68,7 +67,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
+          // const user = userCredential.user;
         })
         .catch((error) => {
           const errorCode = error.code;
