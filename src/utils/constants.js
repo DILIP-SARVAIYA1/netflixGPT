@@ -15,3 +15,12 @@ export const API_OPTIONS = {
 
 export const FETCH_NP1 =
   "https://api.themoviedb.org/3/movie/now_playing?page=1";
+
+export const FETCH_POPULAR =
+  "https://api.themoviedb.org/3/movie/popular?page=1";
+export const IMG_API = "https://image.tmdb.org/t/p/w500/";
+
+export const SUPPORTED_LANGUAGE = [
+  { identifier: "english", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+];
